@@ -1,0 +1,11 @@
+<ng-template #popContent>
+    <div class="btn-group" role="group">
+        <div *ngFor="let symbol of turkSymbols">
+            <input type="radio" (click)="click(symbol['id']); popover.close()" class="btn-check" id="btnradio{{ symbol['id'] }}" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio{{ symbol['id'] }}" [innerHTML]="symbol['sym']"></label>    
+        </div>
+      </div>
+</ng-template>
+<button type="button" #popover="ngbPopover" class="btn btn-outline-secondary" [ngbPopover]="popContent">
+  T
+</button>

@@ -1,0 +1,8 @@
+/* .list-group {
+    height: 85vh;
+    overflow-y: scroll;
+  } */
+
+
+.list-group-item:nth-child(even) {background: rgb(222, 243, 217)}
+.list-group-item:nth-child(odd) {background: #f6f6d3}

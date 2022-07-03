@@ -1,0 +1,52 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<div class="d-flex flex-column vh-100 overflow-hidden">
+				<div class="row my-3">
+					<div class="col-4">
+						<div class="d-flex align-items-center w-100 h-100 form-check form-switch">
+							<label class="form-check-label m-1" for="flexCheckDefault">
+								Full search
+							</label>
+							<input class="form-check-input m-2" type="checkbox" role="switch" id="flexCheckDefault"
+								(change)="fullSearch($event)">
+								<t-symbols (symbolEmitter)="turkSymbol($event)"></t-symbols>
+						</div>
+					</div>
+					<div class="col-8">
+						<input #searchInput type="text" class="form-control" (keyup)="search($event)" />
+					</div>
+				</div>
+				<div class="row h-100 mb-3 mx-0 overflow-hidden">
+					<div class="container-fluid h-100">
+						<div class="row h-100">
+							<div class="col-4 h-100 p-0 m-0">
+								<div class="card h-100 border rounded bg-white">
+									<div class="card-body p-0 m-0 overflow-hidden">
+										<div class="list-group h-100 list-group-flush rounded-0">
+											<div #wordsList class="h-100 scrollable overflow-auto">
+												<a *ngFor="let word of words" href="#" (click)="showCard(word)"
+													class="list-group-item">{{word.value}}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div *ngIf="(card)" class="col-8 h-100 p-2 m-0">
+								<div class="card-header">
+									{{card}}
+								</div>
+								<div class="card-body p-2 m-0 overflow-hidden">
+									{{translation}}
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

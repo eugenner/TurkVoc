@@ -1,0 +1,15 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 p-2">
+      		<input #searchInput type="text" class="form-control" (keyup)="search($event)"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 list-group">
+			<a *ngFor="let word of words" href="#" (click)="showCard(word)" class="list-group-item">{{word.word_tk}}</a>
+		</div>
+		<div class="col-md-8">
+			{{card}}
+		</div>
+	</div>
+</div>
